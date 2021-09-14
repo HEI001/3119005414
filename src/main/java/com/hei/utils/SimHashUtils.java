@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
  * @date 2021/9/14 14:05
  */
 public class SimHashUtils {
-    private final int HASH_BITS = 64;
+    private static final int HASH_BITS = 64;
 
     //private  String tokens;
     private BigInteger intSimHash;
@@ -23,7 +23,7 @@ public class SimHashUtils {
      * @param tokens 传入的String类型字符串
      * @return 返回tokens的hash值
      */
-    public String simHash(String tokens) {
+    public static String simHash(String tokens) {
         // 定义特征向量/数组
         int[] v = new int[HASH_BITS];
         //1、分词，将文本去掉格式,将" \t\n\r\f"为分隔符，进行分词
@@ -61,7 +61,7 @@ public class SimHashUtils {
      * @param str 传入字符串
      * @return 得到的二进制转回BigInteger类型返回
      */
-    public BigInteger hash(String str) {
+    public static BigInteger hash(String str) {
         try{
             // 这里使用了MD5获得hash值
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");

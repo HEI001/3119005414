@@ -14,7 +14,7 @@ public class FileUtils {
      * @param filePath 读取文件路径、
      * @return 将txt文件以字符串形式返回
      */
-    public String readFile(String filePath){
+    public static String readFile(String filePath){
         File file=new File(filePath);
         StringBuilder stringBuilder=new StringBuilder();
         try {
@@ -36,7 +36,7 @@ public class FileUtils {
      * 将查重得到的相似度写入txt文件中
      * @param similarity 查重率
      */
-    public void writeFile(String  similarity,String filePath){
+    public static void writeFile(String  similarity,String filePath){
         File file = new File(filePath);
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
