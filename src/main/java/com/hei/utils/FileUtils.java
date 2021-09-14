@@ -6,7 +6,7 @@ import java.io.*;
  * TODO
  *
  * @author Crystry
- * @date 2021/9/1414:05
+ * @date 2021/9/14 14:05
  */
 public class FileUtils {
     /**
@@ -36,8 +36,8 @@ public class FileUtils {
      * 将查重得到的相似度写入txt文件中
      * @param similarity 查重率
      */
-    public void writeFile(String  similarity){
-        File file = new File("D:\\java\\Learn\\Homework\\text\\similarity.txt");
+    public void writeFile(String  similarity,String filePath){
+        File file = new File(filePath);
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF-8");
