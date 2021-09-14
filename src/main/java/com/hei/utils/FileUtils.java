@@ -32,7 +32,25 @@ public class FileUtils {
         }
         return stringBuilder.toString();
     }
-
+    /**
+     * 将查重得到的相似度写入txt文件中
+     * @param similarity 查重率
+     */
+    public void writeFile(String  similarity){
+        File file = new File("D:\\java\\Learn\\Homework\\text\\similarity.txt");
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF-8");
+            outputStreamWriter.append("文本相似度为：");
+            outputStreamWriter.append(similarity);
+            //关闭写入流
+            outputStreamWriter.close();
+            //关闭输入流
+            fileOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
