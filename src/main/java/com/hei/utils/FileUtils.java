@@ -27,9 +27,14 @@ public class FileUtils {
             fileInputStream = new FileInputStream(file);
             inputStreamReader = new InputStreamReader(fileInputStream, StandardCharsets.UTF_8);
             while (inputStreamReader.ready()) {
+                //读取文件内容
                 stringBuilder.append((char) inputStreamReader.read());
             }
-        } catch (IOException e) {
+            //如果发现文件为空，抛出异常告知用户
+            if (stringBuilder.length() == 0) {
+                throw new EmptyTxtException("文件为空，请重新输入文件！");
+            }
+        } catch (IOException | EmptyTxtException e) {
             e.printStackTrace();
         } finally {
             try {
@@ -44,13 +49,6 @@ public class FileUtils {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        try {
-            if (stringBuilder.length() == 0) {
-                throw new EmptyTxtException("文件为空，请重新输入文件！");
-            }
-        } catch (EmptyTxtException e) {
-            e.printStackTrace();
         }
         return stringBuilder.toString();
     }

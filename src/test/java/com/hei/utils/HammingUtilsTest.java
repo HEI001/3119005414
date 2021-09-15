@@ -9,6 +9,9 @@ import org.junit.Test;
  * @date 2021/9/1415:24
  */
 public class HammingUtilsTest {
+    /**
+     * 测试海明距离算法代码是否正常运行
+     */
     @Test
     public void getSimilarity(){
         String file1 = FileUtils.readFile("D:\\java\\Learn\\Homework\\text\\orig.txt");
