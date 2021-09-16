@@ -29,8 +29,8 @@ public class HammingUtils {
 
     /**
      * 输入两个simHash值，计算输出相似度
-     * @param simHash1
-     * @param simHash2
+     * @param simHash1 第一字符串的得到的hash值
+     * @param simHash2 第二字符串的得到的hash值
      * @return 相似度
      */
     public static String getSimilarity(String simHash1, String simHash2) {

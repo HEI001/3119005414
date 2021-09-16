@@ -1,12 +1,10 @@
 package com.hei.utils;
 
 import com.hei.exception.EmptyTxtException;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 /**
- * TODO
  *
  * @author Crystry
  * @date 2021/9/14 14:05
@@ -84,7 +82,6 @@ public class FileUtils {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 

@@ -1,22 +1,17 @@
 package com.hei.utils;
 
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.StringTokenizer;
 
 /**
- * TODO
  *
  * @author Crystry
  * @date 2021/9/14 14:05
  */
 public class SimHashUtils {
     private static final int HASH_BITS = 64;
-
-    //private  String tokens;
-    private BigInteger intSimHash;
-    private String strSimHash;
-
 
     /**
      * 传入String，计算出它的hash值，并以字符串形式输出
@@ -65,7 +60,7 @@ public class SimHashUtils {
         try{
             // 这里使用了MD5获得hash值
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            String s = new BigInteger(1, messageDigest.digest(str.getBytes("UTF-8"))).toString(2);
+            String s = new BigInteger(1, messageDigest.digest(str.getBytes(StandardCharsets.UTF_8))).toString(2);
             return  new BigInteger(s);
         }catch(Exception e){
             e.printStackTrace();
